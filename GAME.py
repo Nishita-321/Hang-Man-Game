@@ -21,8 +21,8 @@ for i in range(26):
     letters.append([x, y, chr(A + i), True])
 
 # fonts
-LETTER_FONT = pygame.font.SysFont('comicsans', 40)
-WORD_FONT = pygame.font.SysFont('comicsans', 60)
+LETTER_FONT = pygame.font.SysFont('comicsans', 30)
+WORD_FONT = pygame.font.SysFont('comicsans', 40)
 TITLE_FONT = pygame.font.SysFont('comicsans', 70)
 
 # load images.
@@ -36,13 +36,13 @@ hangman_status = 0
 words = [ "APPLE", "BANANA", "ORANGE", "STRAWBERRY", "KIWI", "WATERMELON", "GRAPE", "PINEAPPLE", "MANGO", "PEACH",
     "ELEPHANT", "LION", "TIGER", "GIRAFFE", "ZEBRA", "HIPPO", "KOALA", "PENGUIN", "KANGAROO", "CROCODILE",
     "SOCCER", "BASKETBALL", "TENNIS", "VOLLEYBALL", "CRICKET", "SWIMMING", "BOXING", "GOLF", "RUGBY", "SURFING",
-    "COMPUTER", "INTERNET", "PROGRAMMING", "ALGORITHM", "DATABASE", "SOFTWARE", "HARDWARE", "KEYBOARD", "MOUSE", "MONITOR",
+    "COMPUTER", "INTERNET", "ALGORITHM", "DATABASE", "SOFTWARE", "HARDWARE", "KEYBOARD", "MOUSE", "MONITOR",
     "COFFEE", "TEA", "CHOCOLATE", "PIZZA", "SUSHI", "BURGER", "PASTA", "ICE CREAM", "CAKE", "SANDWICH",
     "SUNFLOWER", "ROSE", "DAISY", "TULIP", "LILY", "ORCHID", "DANDELION", "CACTUS", "POPPY", "LAVENDER",
     "CARROT", "POTATO", "TOMATO", "BROCCOLI", "CUCUMBER", "LETTUCE", "ONION", "PEPPER", "SPINACH", "GARLIC",
     "CAR", "BICYCLE", "TRAIN", "AIRPLANE", "SHIP", "HELICOPTER", "MOTORCYCLE", "BUS", "TRUCK", "SCOOTER",
     "OCEAN", "MOUNTAIN", "DESERT", "FOREST", "RIVER", "LAKE", "WATERFALL", "ISLAND", "CANYON", "VOLCANO",
-    "BOOK", "MOVIE", "MUSIC", "ART", "POETRY", "DANCE", "THEATER", "PHOTOGRAPHY", "SCULPTURE", "ARCHITECTURE"]
+    "BOOK", "MOVIE", "MUSIC", "ART", "POETRY", "DANCE", "THEATER", "PHOTOGRAPHY", "SCULPTURE"]
 word = random.choice(words)
 guessed = []
 
@@ -66,7 +66,7 @@ def draw():
         else:
             display_word += "_ "
     text = WORD_FONT.render(display_word, 1, BLACK)
-    win.blit(text, (400, 200))
+    win.blit(text, (320, 200))
 
     # draw buttons
     for letter in letters:
@@ -76,7 +76,7 @@ def draw():
             text = LETTER_FONT.render(ltr, 1, BLACK)
             win.blit(text, (x - text.get_width()/2, y - text.get_height()/2))
 
-    win.blit(images[hangman_status], (150, 100))
+    win.blit(images[hangman_status], (100, 120))
     pygame.display.update()
 
 
