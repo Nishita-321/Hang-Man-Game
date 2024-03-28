@@ -84,7 +84,9 @@ def display_message(message):
     pygame.time.delay(1000)
     win.fill(WHITE)
     text = WORD_FONT.render(message, 1, BLACK)
-    win.blit(text, (WIDTH/2 - text.get_width()/2, HEIGHT/2 - text.get_height()/2))
+    correctword = WORD_FONT.render("The Word is: " + word, 1, BLACK)
+    win.blit(text, (WIDTH/2 - text.get_width()/2, HEIGHT/4 - text.get_height()/4))
+    win.blit(correctword, (WIDTH/2 - correctword.get_width()/2, HEIGHT/2 - correctword.get_height()/2))
     pygame.display.update()
     pygame.time.delay(3000*600)
 
