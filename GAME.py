@@ -55,7 +55,7 @@ def draw():
     win.fill(WHITE)
 
     # draw title
-    text = TITLE_FONT.render("DEVELOPER HANGMAN", 1, BLACK)
+    text = TITLE_FONT.render("HANGMAN GAME", 1, BLACK)
     win.blit(text, (WIDTH/2 - text.get_width()/2, 20))
 
     # draw word
@@ -100,7 +100,7 @@ def main():
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                run=False
+                sys.exit()
             if event.type == pygame.MOUSEBUTTONDOWN:
                 m_x, m_y = pygame.mouse.get_pos()
                 for letter in letters:
