@@ -14,4 +14,4 @@ This repository contains a classic Hangman game implemented in Python using the 
 4. Guess letters to uncover the hidden word.
 
 5. Wrong moves and its over! 
-So be sharp have fun playing Hangman!
+So be sharp have fun playing Hangman!!
