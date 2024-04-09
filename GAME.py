@@ -34,7 +34,15 @@ for i in range(7):
 # game variables
 hangman_status = 0
 words = [ "APPLE", "BANANA", "ORANGE", "STRAWBERRY", "KIWI", "WATERMELON", "GRAPE", "PINEAPPLE", "MANGO", "PEACH",
-    "ELEPHANT", "LION", "TIGER", "GIRAFFE", "ZEBRA", "HIPPO", "KOALA", "PENGUIN", "KANGAROO", "CROCODILE"]
+    "ELEPHANT", "LION", "TIGER", "GIRAFFE", "ZEBRA", "HIPPO", "KOALA", "PENGUIN", "KANGAROO", "CROCODILE","SOCCER", 
+    "BASKETBALL", "TENNIS", "VOLLEYBALL", "CRICKET", "SWIMMING", "BOXING", "GOLF", "RUGBY", "SURFING",
+    "COMPUTER", "INTERNET", "ALGORITHM", "DATABASE", "SOFTWARE", "HARDWARE", "KEYBOARD", "MOUSE", "MONITOR",
+    "COFFEE", "TEA", "CHOCOLATE", "PIZZA", "SUSHI", "BURGER", "PASTA", "ICE CREAM", "CAKE", "SANDWICH",
+    "SUNFLOWER", "ROSE", "DAISY", "TULIP", "LILY", "ORCHID", "DANDELION", "CACTUS", "POPPY", "LAVENDER",
+    "CARROT", "POTATO", "TOMATO", "BROCCOLI", "CUCUMBER", "LETTUCE", "ONION", "PEPPER", "SPINACH", "GARLIC",
+    "CAR", "BICYCLE", "TRAIN", "AIRPLANE", "SHIP", "HELICOPTER", "MOTORCYCLE", "BUS", "TRUCK", "SCOOTER",
+    "OCEAN", "MOUNTAIN", "DESERT", "FOREST", "RIVER", "LAKE", "WATERFALL", "ISLAND", "CANYON", "VOLCANO",
+    "BOOK", "MOVIE", "MUSIC", "ART", "POETRY", "DANCE", "THEATER", "PHOTOGRAPHY", "SCULPTURE"]
 word = random.choice(words)
 guessed = []
 
@@ -80,7 +88,7 @@ def display_message(message):
     win.blit(text, (WIDTH/2 - text.get_width()/2, HEIGHT/4 - text.get_height()/4))
     # win.blit(correctword, (WIDTH/2 - correctword.get_width()/2, HEIGHT/2 - correctword.get_height()/2))
     pygame.display.update()
-    pygame.time.delay(30000)
+    pygame.time.delay(3000)
 
 def main():
     global hangman_status
