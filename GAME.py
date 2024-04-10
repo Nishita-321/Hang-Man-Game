@@ -81,16 +81,14 @@ def draw():
 
 
 def display_message(message):
-    while True:
+        pygame.time.delay(1000)
         win.fill(WHITE)
         text = WORD_FONT.render(message, 1, BLACK)
         correctword = WORD_FONT.render("The Word is: " + word, 1, BLACK)
         win.blit(text, (WIDTH/2 - text.get_width()/2, HEIGHT/4 - text.get_height()/4))
-        # win.blit(correctword, (WIDTH/2 - correctword.get_width()/2, HEIGHT/2 - correctword.get_height()/2))
+        win.blit(correctword, (WIDTH/2 - correctword.get_width()/2, HEIGHT/2 - correctword.get_height()/2))
         pygame.display.update()
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                sys.exit()
+        pygame.time.delay(60000)
 
 def main():
     global hangman_status
