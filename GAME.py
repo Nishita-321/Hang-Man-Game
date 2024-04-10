@@ -23,7 +23,7 @@ for i in range(26):
 # fonts
 LETTER_FONT = pygame.font.SysFont('comicsans', 30)
 WORD_FONT = pygame.font.SysFont('comicsans', 40)
-TITLE_FONT = pygame.font.SysFont('comicsans', 70)
+TITLE_FONT = pygame.font.SysFont('comicsans', 30)
 
 # load images.
 images = []
