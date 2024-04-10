@@ -7,6 +7,8 @@ pygame.init()
 WIDTH, HEIGHT = 800, 500
 win = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Hangman Game!")
+background=pygame.image.load("Background.webp")
+
 
 # button variables
 RADIUS = 20
@@ -33,7 +35,7 @@ for i in range(7):
 
 # game variables
 hangman_status = 0
-words = [ "APPLE", "BANANA", "ORANGE", "STRAWBERRY", "KIWI", "WATERMELON", "GRAPE", "PINEAPPLE", "MANGO", "PEACH",
+words =[ "APPLE", "BANANA", "ORANGE", "STRAWBERRY", "KIWI", "WATERMELON", "GRAPE", "PINEAPPLE", "MANGO", "PEACH",
     "ELEPHANT", "LION", "TIGER", "GIRAFFE", "ZEBRA", "HIPPO", "KOALA", "PENGUIN", "KANGAROO", "CROCODILE","SOCCER", 
     "BASKETBALL", "TENNIS", "VOLLEYBALL", "CRICKET", "SWIMMING", "BOXING", "GOLF", "RUGBY", "SURFING",
     "COMPUTER", "INTERNET", "ALGORITHM", "DATABASE", "SOFTWARE", "HARDWARE", "KEYBOARD", "MOUSE", "MONITOR",
@@ -43,6 +45,8 @@ words = [ "APPLE", "BANANA", "ORANGE", "STRAWBERRY", "KIWI", "WATERMELON", "GRAP
     "CAR", "BICYCLE", "TRAIN", "AIRPLANE", "SHIP", "HELICOPTER", "MOTORCYCLE", "BUS", "TRUCK", "SCOOTER",
     "OCEAN", "MOUNTAIN", "DESERT", "FOREST", "RIVER", "LAKE", "WATERFALL", "ISLAND", "CANYON", "VOLCANO",
     "BOOK", "MOVIE", "MUSIC", "ART", "POETRY", "DANCE", "THEATER", "PHOTOGRAPHY", "SCULPTURE"]
+
+
 word = random.choice(words)
 guessed = []
 
@@ -52,10 +56,10 @@ BLACK = (0,0,0)
 
 
 def draw():
-    win.fill(WHITE)
+    win.blit(background, (0,0))
 
     # draw title
-    text = TITLE_FONT.render("HANGMAN GAME", 1, BLACK)
+    text = TITLE_FONT.render("HANGMAN GAME", 1, WHITE)
     win.blit(text, (WIDTH/2 - text.get_width()/2, 20))
 
     # draw word
@@ -63,17 +67,19 @@ def draw():
     for letter in word:
         if letter in guessed:
             display_word += letter + " "
+        elif letter==" ":
+            display_word += "  "
         else:
             display_word += "_ "
-    text = WORD_FONT.render(display_word, 1, BLACK)
+    text = WORD_FONT.render(display_word, 1, WHITE)
     win.blit(text, (320, 200))
 
     # draw buttons
     for letter in letters:
         x, y, ltr, visible = letter
         if visible:
-            pygame.draw.circle(win, BLACK, (x, y), RADIUS, 3)
-            text = LETTER_FONT.render(ltr, 1, BLACK)
+            pygame.draw.rect(win, WHITE, [x-17, y-17,37,37], 2,border_radius=7)
+            text = LETTER_FONT.render(ltr, 1, WHITE)
             win.blit(text, (x - text.get_width()/2, y - text.get_height()/2))
 
     win.blit(images[hangman_status], (100, 120))
@@ -82,9 +88,10 @@ def draw():
 
 def display_message(message):
     while True:
-        win.fill(WHITE)
-        text = WORD_FONT.render(message, 1, BLACK)
-        correctword = WORD_FONT.render("The Word is: " + word, 1, BLACK)
+
+        win.blit(background, (0,0))
+        text = WORD_FONT.render(message, 1, WHITE)
+        correctword = WORD_FONT.render("The Word is: " + word, 1, WHITE)
         win.blit(text, (WIDTH/2 - text.get_width()/2, HEIGHT/4 - text.get_height()/4))
         win.blit(correctword, (WIDTH/2 - correctword.get_width()/2, HEIGHT/2 - correctword.get_height()/2))
         pygame.display.update()
