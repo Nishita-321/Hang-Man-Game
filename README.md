@@ -2,7 +2,7 @@
 
 This repository contains a classic Hangman game implemented in Python using the Pygame module. Players can guess letters to uncover a hidden word before the hangman is fully drawn. Enjoy this interactive and fun game!
 
-## Collaborators
+## Team Verbal Verse
 1. Nishita(2310990588)-Project Manager
 2. Nitish(2310990589)-Developer
 3. Mudit(2310990576)-Tester
